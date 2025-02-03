@@ -42,8 +42,13 @@ int main(){
     auto start = high_resolution_clock::now();
     for(int i=0;i<words.size();i++){
         if(words[i].size()==1){
-            keys.push_back('i'-words[i][0]);
-            keys.push_back('a'-words[i][0]);
+            if('a'<=words[i][0] && words[i][0]<='z'){
+                keys.push_back('i'-words[i][0]);
+                keys.push_back('a'-words[i][0]);
+            }else{
+                keys.push_back('I'-words[i][0]);
+                keys.push_back('A'-words[i][0]);
+            }
         }
     }
     if(!keys.empty()){
@@ -59,3 +64,5 @@ int main(){
     auto duration = duration_cast<milliseconds>(stop - start);
     cout << "time taken: "<<duration.count() << " ms" << endl;
 }
+
+//Ashley's message: d vh cpibmt. don nj xjgy ojyvt.
