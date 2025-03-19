@@ -1,4 +1,3 @@
-# error!!
 def shift_cipher(message, key):
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     shifted_alphabet = alphabet[key:] + alphabet[:key]
@@ -10,15 +9,20 @@ def shift_cipher(message, key):
     return encrypted_message, alphabet, shifted_alphabet
 
 def display_shift(alphabet, shifted_alphabet, key):
+    print("translation table: ")
     alphabet = alphabet + alphabet[:key]
-    shifted_alphabet = list(str(i) for i in range(1, key+1))+alphabet[:26]
+    shifted_alphabet = []
+    for i in range(1,key+1): 
+        shifted_alphabet+=[i]
+    shifted_alphabet+=alphabet[:26]
     for i in range(0,len(alphabet)):
-        print(alphabet[i],shifted_alphabet[i])
+        print('\t',shifted_alphabet[i],alphabet[i])
 
 def main():
-    print("Shift Cipher works by shifting all the characters in your message by a fixed number of position. For example, move A by 1 position and it becomes B; move A by 2 position it becomes C.")
+    print("Shift Cipher works by shifting all the characters in your message by a fixed number of position.")
+    print("For example, move A by 1 position and it becomes B; move A by 2 position it becomes C.")
     print('The number of positions you shift the letters is called the "key".') 
-    print("This program will encrypt your message using a shift cipher.")
+    print("This program will encrypt your message using a shift cipher.\n")
     
     message = input("Enter your message: ")
     while True:
