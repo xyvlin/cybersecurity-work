@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int key = 4;
+int key = 21;
 
 string shift(string plain, int k){
     string cip="";
